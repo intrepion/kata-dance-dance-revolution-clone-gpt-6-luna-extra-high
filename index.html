@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a16">
+    <meta name="description" content="A neon-soaked, original browser rhythm game. Find the beat and own the floor.">
+    <title>Pulse//Step — Rhythm Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <main class="arcade-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Pulse Step home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="brand-name">PULSE<span>//</span>STEP</span>
+        </a>
+        <div class="topbar-right">
+          <span class="live-pill"><span class="live-dot"></span> ARCADE ONLINE</span>
+          <span class="version">VOL. 01&nbsp; / &nbsp;2026</span>
+        </div>
+      </header>
+
+      <section class="intro" id="top">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE FLOOR IS YOURS</p>
+          <h1>FIND YOUR<br><span>RHYTHM.</span></h1>
+          <p class="intro-subtitle">Four lanes. One heartbeat. Hit every step like you mean it.</p>
+        </div>
+        <div class="intro-stats" aria-label="Game features">
+          <div class="intro-stat"><strong>04</strong><span>LANES</span></div>
+          <div class="stat-divider"></div>
+          <div class="intro-stat"><strong>128</strong><span>BPM</span></div>
+          <div class="stat-divider"></div>
+          <div class="intro-stat"><strong>∞</strong><span>ENERGY</span></div>
+        </div>
+      </section>
+
+      <section class="game-layout" aria-label="Rhythm game">
+        <aside class="side-panel left-panel">
+          <div class="panel-kicker">PLAYER 01 <span>● CONNECTED</span></div>
+          <div class="player-card">
+            <div class="avatar" aria-hidden="true"><div class="avatar-head"></div><div class="avatar-body"></div><span>★</span></div>
+            <div><div class="player-name">FLOOR<br>COMMANDER</div><div class="player-rank">RANK <b>ROOKIE</b></div></div>
+          </div>
+          <div class="side-rule"></div>
+          <div class="metric-label">TOTAL SCORE</div>
+          <div class="score-value" id="score">0000000</div>
+          <div class="score-best">BEST <span id="best-score">0000000</span></div>
+          <div class="side-rule"></div>
+          <div class="metric-label">COMBO</div>
+          <div class="combo-value" id="combo">00<span>×</span></div>
+          <div class="combo-caption" id="combo-caption">BUILD YOUR STREAK</div>
+          <div class="combo-meter" aria-hidden="true"><span id="combo-meter-fill"></span></div>
+          <div class="side-rule"></div>
+          <div class="metric-label">TIMING</div>
+          <div class="judgement-list">
+            <div><span class="j-perfect">PERFECT</span><b id="perfect-count">0</b></div>
+            <div><span class="j-great">GREAT</span><b id="great-count">0</b></div>
+            <div><span class="j-good">GOOD</span><b id="good-count">0</b></div>
+            <div><span class="j-miss">MISS</span><b id="miss-count">0</b></div>
+          </div>
+        </aside>
+
+        <div class="cabinet-wrap">
+          <div class="cabinet-topline"><span>★&nbsp; NOW PLAYING</span><span class="cabinet-id">CABINET 01&nbsp; / &nbsp;LOCAL</span></div>
+          <div class="song-strip">
+            <div class="song-art" aria-hidden="true"><span class="art-sun"></span><span class="art-wave wave-a"></span><span class="art-wave wave-b"></span><span class="art-disc"></span><b>NEON<br>DRIVE</b></div>
+            <div class="song-info"><div class="song-tag">PULSE//STEP ORIGINAL <span>NEW TRACK</span></div><h2>NEON VELOCITY</h2><p>Pulse Runner <span>•</span> SYNTHWAVE / DANCE</p></div>
+            <div class="song-bpm"><strong>128</strong><span>BPM</span></div>
+          </div>
+          <div class="cabinet" id="cabinet">
+            <div class="cabinet-glow" aria-hidden="true"></div>
+            <div class="cabinet-head"><span>STEP<br><b>SYNC</b></span><div class="cabinet-brand-mark">P<span>//</span>S</div><span class="difficulty" id="difficulty-label">BASIC <b>●●○</b></span></div>
+            <div class="playfield" id="playfield" aria-label="Four lane note field">
+              <div class="lane lane-left" data-lane="0"><span class="lane-shine"></span></div>
+              <div class="lane lane-down" data-lane="1"><span class="lane-shine"></span></div>
+              <div class="lane lane-up" data-lane="2"><span class="lane-shine"></span></div>
+              <div class="lane lane-right" data-lane="3"><span class="lane-shine"></span></div>
+              <div class="hit-line" aria-hidden="true"></div>
+              <div class="hit-label" id="hit-label" aria-live="polite"></div>
+              <div class="beat-flash" id="beat-flash" aria-hidden="true"></div>
+              <div class="countdown" id="countdown" aria-live="assertive"></div>
+              <div class="intro-overlay" id="intro-overlay">
+                <div class="overlay-chip"><span>♪</span> READY TO DANCE?</div>
+                <h3>OWN THE<br><em>BEAT.</em></h3>
+                <p>Arrow keys or <b>A S W D</b> to step.<br>Catch the arrows at the light line.</p>
+                <button class="start-button" id="start-button"><span>START GAME</span><b>▶</b></button>
+                <div class="start-hint">PRESS ENTER TO BEGIN</div>
+              </div>
+              <div class="pause-overlay hidden" id="pause-overlay"><div class="pause-symbol">Ⅱ</div><h3>PAUSED</h3><p>TAKE A BREATH. THE BEAT CAN WAIT.</p><button class="resume-button" id="resume-button">RESUME <span>▶</span></button></div>
+              <div class="result-overlay hidden" id="result-overlay"><div class="result-kicker">TRACK COMPLETE</div><h3 id="result-title">NICE MOVES.</h3><div class="result-grade" id="result-grade">B</div><div class="result-summary"><span>SCORE <b id="result-score">0</b></span><span>MAX COMBO <b id="result-combo">0</b></span><span>ACCURACY <b id="result-accuracy">0%</b></span></div><button class="start-button replay-button" id="replay-button"><span>PLAY AGAIN</span><b>↻</b></button></div>
+              <div class="scanlines" aria-hidden="true"></div>
+            </div>
+            <div class="receptor-row" aria-label="Step targets">
+              <div class="receptor" data-lane="0"><span>←</span></div><div class="receptor" data-lane="1"><span>↓</span></div><div class="receptor" data-lane="2"><span>↑</span></div><div class="receptor" data-lane="3"><span>→</span></div>
+            </div>
+            <div class="cabinet-controls"><div class="life-block"><span>LIFE</span><div class="life-track"><i id="life-fill"></i></div><b id="life-text">100%</b></div><div class="song-progress"><span id="time-current">0:00</span><div class="progress-track"><i id="progress-fill"></i></div><span id="time-total">0:30</span></div><button class="pause-button" id="pause-button" aria-label="Pause game" title="Pause (Escape)">Ⅱ</button></div>
+          </div>
+          <div class="cabinet-foot"><span>STEP TO THE BEAT</span><span class="foot-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>MOVE WITH THE MUSIC</span></div>
+        </div>
+
+        <aside class="side-panel right-panel">
+          <div class="panel-kicker">CHART SELECT <span>01 / 03</span></div>
+          <div class="chart-picker" role="group" aria-label="Difficulty">
+            <button class="chart-option selected" data-difficulty="basic" aria-pressed="true"><span class="chart-dots">●●○</span><span class="chart-name">BASIC</span><span class="chart-level">Lv. 3</span></button>
+            <button class="chart-option" data-difficulty="standard" aria-pressed="false"><span class="chart-dots">●●●</span><span class="chart-name">STANDARD</span><span class="chart-level">Lv. 6</span></button>
+            <button class="chart-option" data-difficulty="expert" aria-pressed="false"><span class="chart-dots">●●●●</span><span class="chart-name">EXPERT</span><span class="chart-level">Lv. 9</span></button>
+          </div>
+          <div class="side-rule"></div>
+          <div class="metric-label">STEP CHART</div>
+          <div class="chart-stat"><span>NOTES</span><b id="note-total">52</b></div>
+          <div class="chart-stat"><span>MAX COMBO</span><b id="chart-combo">52</b></div>
+          <div class="chart-stat"><span>STREAM</span><b id="chart-stream">64</b></div>
+          <div class="side-rule"></div>
+          <div class="metric-label">CONTROLS</div>
+          <div class="key-guide"><span class="key-cap">←</span><span class="key-cap">↓</span><span class="key-cap">↑</span><span class="key-cap">→</span><div class="key-labels"><span>LEFT</span><span>DOWN</span><span>UP</span><span>RIGHT</span></div></div>
+          <div class="controls-note">OR USE <b>A S W D</b><br>ON YOUR KEYBOARD</div>
+          <div class="side-rule"></div>
+          <div class="metric-label">HOW TO PLAY</div>
+          <p class="how-to">Match each arrow as it reaches the glowing target. The closer your timing, the higher your score.</p>
+          <div class="timing-key"><span><i class="timing-perfect"></i> PERFECT <b>±55ms</b></span><span><i class="timing-great"></i> GREAT <b>±105ms</b></span><span><i class="timing-good"></i> GOOD <b>±160ms</b></span></div>
+        </aside>
+      </section>
+
+      <section class="touch-controls" aria-label="Touch controls">
+        <button data-touch-lane="0" aria-label="Left arrow">←</button><button data-touch-lane="1" aria-label="Down arrow">↓</button><button data-touch-lane="2" aria-label="Up arrow">↑</button><button data-touch-lane="3" aria-label="Right arrow">→</button>
+      </section>
+
+      <footer class="page-footer"><span>© 2026 PULSE//STEP ARCADE</span><span>MADE FOR THE LOVE OF THE BEAT&nbsp; <b>♥</b></span><span>NO COINS REQUIRED</span></footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
