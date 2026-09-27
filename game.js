@@ -255,8 +255,8 @@
       element.className = "note";
       element.textContent = ARROWS[note.lane];
       element.dataset.id = note.id;
-      element.style.setProperty("--lane", ["#4ce6e0", "#79a7ff", "#c77bff", "#fb4b91"][note.lane]);
-      element.style.setProperty("--lane-rgb", ["76,230,224", "121,167,255", "199,123,255", "251,75,145"][note.lane]);
+      const audioLeadIn = audioContext ? 0.075 : 0;
+      element.style.setProperty("--note-phase-delay", `${-(note.time + audioLeadIn)}s`);
       laneEls[note.lane].appendChild(element);
       noteElements.push({ note, element });
     }
@@ -267,6 +267,7 @@
     state = "countdown";
     songStart = 0;
     lastVisualBeat = -1;
+    field.classList.remove("is-playing", "is-paused");
     $("intro-overlay").classList.add("hidden");
     $("result-overlay").classList.add("hidden");
     $("pause-overlay").classList.add("hidden");
@@ -290,6 +291,7 @@
           $("countdown").classList.add("hidden");
           state = "playing";
           startMusic();
+          field.classList.add("is-playing");
           raf = requestAnimationFrame(frame);
         }, 430);
       }
@@ -300,6 +302,7 @@
     if (state !== "playing") return;
     state = "paused";
     pauseAt = audioContext ? audioContext.currentTime : performance.now() / 1000;
+    field.classList.add("is-paused");
     stopMusic();
     cancelAnimationFrame(raf);
     $("pause-overlay").classList.remove("hidden");
@@ -313,6 +316,7 @@
       songStart += duration;
     }
     state = "playing";
+    field.classList.remove("is-paused");
     if (audioContext && audioContext.state === "suspended") audioContext.resume();
     startMusic(songStart > 0);
     pauseAt = 0;
@@ -426,6 +430,7 @@
 
   function finishGame(failed) {
     state = "finished";
+    field.classList.remove("is-playing", "is-paused");
     stopMusic();
     cancelAnimationFrame(raf);
     for (const note of chart) if (!note.hit && !note.missed) onMiss(note);

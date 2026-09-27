@@ -799,14 +799,25 @@ h1 span {
   display: grid;
   place-items: center;
   transform: translate(-50%,-50%);
-  color: var(--lane);
+  color: #4ce6e0;
   font-family: Arial,sans-serif;
   font-weight: 900;
   font-size: clamp(25px,4vw,37px);
   line-height: 1;
-  text-shadow: 0 0 4px #fff,0 0 13px var(--lane),0 0 24px var(--lane);
+  text-shadow: 0 0 4px #fff,0 0 13px currentColor,0 0 24px currentColor;
   filter: drop-shadow(0 3px 2px rgba(0,0,0,.75));
+  animation: note-colors 1.875s steps(1,end) infinite;
+  animation-delay: var(--note-phase-delay,0s);
+  animation-play-state: paused;
   will-change: top
+}
+
+.playfield.is-playing .note {
+  animation-play-state: running
+}
+
+.playfield.is-paused .note {
+  animation-play-state: paused
 }
 
 .note:before {
@@ -814,10 +825,10 @@ h1 span {
   position: absolute;
   inset: 5px;
   z-index: -1;
-  background: linear-gradient(135deg,rgba(var(--lane-rgb),.3),rgba(14,16,32,.72));
-  border: 1px solid var(--lane);
+  background: linear-gradient(135deg,color-mix(in srgb,currentColor 30%,transparent),rgba(14,16,32,.72));
+  border: 1px solid currentColor;
   transform: rotate(45deg);
-  box-shadow: 0 0 12px rgba(var(--lane-rgb),.32),inset 0 0 10px rgba(var(--lane-rgb),.2)
+  box-shadow: 0 0 12px color-mix(in srgb,currentColor 40%,transparent),inset 0 0 10px color-mix(in srgb,currentColor 24%,transparent)
 }
 
 .note.hit {
@@ -1506,6 +1517,33 @@ h1 span {
   100% {
     opacity: 0;
     transform: translate(-50%,-50%) scale(1.7)
+  }
+}
+
+@keyframes note-colors {
+  0%,100% {
+    color: #4ce6e0
+  }
+  12.5% {
+    color: #a3ef67
+  }
+  25% {
+    color: #ffdf66
+  }
+  37.5% {
+    color: #ff9e63
+  }
+  50% {
+    color: #fb4b91
+  }
+  62.5% {
+    color: #c77bff
+  }
+  75% {
+    color: #79a7ff
+  }
+  87.5% {
+    color: #8df3b0
   }
 }
 
