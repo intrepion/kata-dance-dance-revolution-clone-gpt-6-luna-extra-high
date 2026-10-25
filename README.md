@@ -1,5 +1,9 @@
 # Pulse//Step
 
+## Play online
+
+[Play Pulse//Step](https://intrepion.github.io/kata-dance-dance-revolution-clone-gpt-6-luna-extra-high/) — free, playable in your browser.
+
 A self-contained, browser-based rhythm game inspired by arcade dance games. The game includes an original synthesized synthwave track, three generated step charts, timing judgements, combo and life systems, keyboard and touch controls, pause/resume, and a saved local high score.
 
 ## Play
