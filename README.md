@@ -11,3 +11,7 @@ A self-contained, browser-based rhythm game inspired by arcade dance games. The 
 Open `index.html` in a modern browser. Select Basic, Standard, or Expert, then choose **Start Game**. Use the arrow keys or `A S W D` to hit notes as they reach the target line. On touch screens, use the four buttons below the cabinet. Press `Escape` or `P` to pause.
 
 Audio is synthesized in the browser with the Web Audio API and starts after the player begins a round. The best score is stored in browser local storage.
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.
