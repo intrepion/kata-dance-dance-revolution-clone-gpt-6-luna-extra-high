@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "workflowCommit": "db2cd35c1a49fa97c782d43abad2be1ef2dc0ce8",
+  "sourceCommit": "d8421fada8c508b505f98bbb39072c4a0749a2a7",
+  "runId": "41446505014",
+  "url": "http://127.0.0.1:4292/",
+  "inputs": {
+    "index.html": "04f47e00865fda40d2e740b6f45d9fecaefc0f437d0a26fbda216fd23b736e38",
+    "styles.css": "f4d4de649f5a449f5b4f90c566c94600de8283ee0d3538e2227bb69ef62fee0c",
+    "game.js": "76f20dce2883d273bed35e549282800fec3e82f6c3df12df538c6f2cd1558378"
+  },
+  "externalFontProvenance": "Google Fonts loaded separately or browser fallback; not hashed",
+  "browser": "153.0.8010.12",
+  "viewport": {
+    "width": 1280,
+    "height": 1000
+  },
+  "screenshots": [
+    "pulse-step-01.png",
+    "pulse-step-02.png"
+  ]
+}

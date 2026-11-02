@@ -1,6 +1,47 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-dance-dance-revolution-clone-gpt-6-luna-extra-high",
   "playUrl": "https://intrepion.github.io/kata-dance-dance-revolution-clone-gpt-6-luna-extra-high/",
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "5e5f7bcc037207ada011ec352ff6174b116be9b5ac3a634460eae5fedef9b005",
+      "alt": "Pulse//Step gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "a15cc91716467c828eeaf7b0f16676974e1577ce3a6a483acffb05a1843e636f",
+        "captureCommit": "d8421fada8c508b505f98bbb39072c4a0749a2a7",
+        "workflowRunId": "41446505014",
+        "inputHashes": {
+          "index.html": "04f47e00865fda40d2e740b6f45d9fecaefc0f437d0a26fbda216fd23b736e38",
+          "styles.css": "f4d4de649f5a449f5b4f90c566c94600de8283ee0d3538e2227bb69ef62fee0c",
+          "game.js": "76f20dce2883d273bed35e549282800fec3e82f6c3df12df538c6f2cd1558378"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "7bc48ab726bc56a9c1794b97b6aef08fc28656d77ffc3031a98342b2bbb28233"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "396ba32eb3abc55d74942bdb95328951e78c5c0a3d076c3535b5b5651fbc23cc",
+      "alt": "Pulse//Step gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "543f0a6c531531c78bba509ab04c4e96f3bc31f8febae2d789b99685cfb11d4b",
+        "captureCommit": "d8421fada8c508b505f98bbb39072c4a0749a2a7",
+        "workflowRunId": "41446505014",
+        "inputHashes": {
+          "index.html": "04f47e00865fda40d2e740b6f45d9fecaefc0f437d0a26fbda216fd23b736e38",
+          "styles.css": "f4d4de649f5a449f5b4f90c566c94600de8283ee0d3538e2227bb69ef62fee0c",
+          "game.js": "76f20dce2883d273bed35e549282800fec3e82f6c3df12df538c6f2cd1558378"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "7bc48ab726bc56a9c1794b97b6aef08fc28656d77ffc3031a98342b2bbb28233"
+      }
+    }
+  ]
 }
